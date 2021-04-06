@@ -1,0 +1,17 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Ola, {{token['nome']}}!</h1>
+		<br>
+		<div class="container">
+			<form action="/editar" method='POST'>
+				<button name="cliente" type="submit" >Editar Dados</button>
+			</form>
+			<form action="/logout" method='POST'>
+			
+				<button type="submit" class="logout">Log Out</button>
+			</form>
+		</div>
+	</body>
+</html>

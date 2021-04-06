@@ -1,0 +1,28 @@
+
+<h1>Olá Visitante!</h1>
+    {%if mensagem%}
+    	<p class='mensagem'>{{mensagem}}</p>
+    {%endif%}
+    <hr>
+  <div class="container">
+  	<form action="/login" method='POST'>
+    	<label for="login"><b>Login (email, CPF ou PIS): </b></label>
+    	<br>
+    	<input type="text" placeholder="Login" name="login" id="login" >
+    	<br>
+    	<label for="senha"><b>Senha: </b></label>
+    	<br>
+    	<input type="password" placeholder="Senha" name="senha" id="senha" >
+    	<br>
+    	<br>
+    	<button type="submit" class="login">Acessar</button>
+	</form>
+	<br>
+	<br>
+	<form action='/googleLogin' method='POST'>
+		<button type="submit" class="google_login">Login via Google</button>
+	</form>
+	<form action="{{url_for('cadastrar')}}">
+		<button type="submit" class="cadastrar">Novo Cliente</button>
+	</form>
+  </div>

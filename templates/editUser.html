@@ -1,0 +1,46 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Ola, {{token['nome']}}!</h1>
+		<p>Abaixo, altere os campos que deseja, em seguida clique em 'Salvar':</p>
+		{%if mensagem%}
+    	<b><p class='mensagem' style='color:red'>{{mensagem}}</p></b>
+    	{%endif%}
+		<br>
+		<div class="container">
+			<form action="/salvar" method='POST'>
+				<h3>Dados Pessoais:<h3>
+				<p>Nome:</p>
+				<input name="nome" type="text" value='{{token['nome']}}'>
+				<p>Email:</p>
+				<input name="email" type="text" value='{{token['email']}}'>
+				<p>CPF (apenas 11 digitos numericos):</p>
+				<input name="cpf" type="text" value='{{token['cpf']}}'>
+				<p>PIS (apenas 11 digitos numericos):</p>
+				<input name="pis" type="text" value='{{token['pis']}}'>
+				<p>Senha (maximo de 15 caracteres):</p>
+				<input name="senha" type="password" value='{{token['senha']}}'>
+				<h3>Endereco:<h3>
+				<p>Rua:</p>
+				<input name="rua" type="text" value='{{token['endereco']['rua']}}'>
+				<p>Numero:</p>
+				<input name="numero" type="text" value='{{token['endereco']['numero']}}'>
+				<p>Complemento:</p>
+				<input name="complemento" type="text" value='{{token['endereco']['complemento']}}'>
+				<p>Municipio:</p>
+				<input name="municipio" type="text" value='{{token['endereco']['municipio']}}'>
+				<p>Estado (2 digitos):</p>
+				<input name="estado" type="text" value='{{token['endereco']['estado']}}'>
+				<p>CEP (apenas digitos numericos):</p>
+				<input name="cep" type="text" value='{{token['endereco']['cep']}}'>
+				<p>Pais:</p>
+				<input name="pais" type="text" value='{{token['endereco']['pais']}}'>
+			<br><br><button type="submit" class="salvar">Salvar</button>
+			</form>
+			<form action="/excluir" method='POST'>
+			<br><br><button type="submit" class="excluir">Remover Cadastro</button>
+			</form>
+		</div>
+	</body>
+</html>
