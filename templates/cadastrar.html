@@ -1,0 +1,43 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Ola!</h1>
+		<p>Preencha todos os campos, em seguida clique em 'Cadastrar':</p>
+		{%if mensagem%}
+    	<b><p class='mensagem' style='color:red'>{{mensagem}}</p></b>
+    	{%endif%}
+		<br>
+		<div class="container">
+			<form action="/cadastrar" method='POST'>
+				<h3>Dados Pessoais:<h3>
+				<p>Nome:</p>
+				<input name="nome" type="text">
+				<p>Email:</p>
+				<input name="email" type="text">
+				<p>CPF (apenas 11 digitos numericos):</p>
+				<input name="cpf" type="text">
+				<p>PIS (apenas 11 digitos numericos):</p>
+				<input name="pis" type="text">
+				<p>Senha (maximo de 15 caracteres):</p>
+				<input name="senha" type="password">
+				<h3>Endereco:<h3>
+				<p>Rua:</p>
+				<input name="rua" type="text">
+				<p>Numero:</p>
+				<input name="numero" type="text">
+				<p>Complemento:</p>
+				<input name="complemento" type="text">
+				<p>Municipio:</p>
+				<input name="municipio" type="text">
+				<p>Estado (UF - 2 digitos):</p>
+				<input name="estado" type="text">
+				<p>CEP (apenas digitos numericos):</p>
+				<input name="cep" type="text">
+				<p>Pais:</p>
+				<input name="pais" type="text">
+			<br><br><button type="submit" class="cadastrar">Cadastrar</button>
+			</form>
+		</div>
+	</body>
+</html>
